@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import './DoctorRecommendations.css';
 import ReactStars from 'react-rating-stars-component'; // Import the library
+import placeholderImage from './assets/doctor.png'; // Import the local image
+import Button from './Button';
+import { faCalendarAlt, faComments, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+
 
 const doctorsList = [
   {
@@ -8,21 +12,21 @@ const doctorsList = [
     specialization: 'Endocrinologist',
     rating: 4.5,
     review: 'Great doctor for diabetes treatment, got cured in 2 months',
-    image: 'https://via.placeholder.com/150',
+    image: placeholderImage,
   },
   {
     name: 'Dr. Sarah Lee',
     specialization: 'Cardiologist',
     rating: 4.8,
     review: 'Helped me manage my high blood pressure, highly recommend!',
-    image: 'https://via.placeholder.com/150',
+    image: placeholderImage,
   },
   {
     name: 'Dr. James Smith',
     specialization: 'Dermatologist',
     rating: 4.2,
     review: 'Excellent treatment for skin issues, saw improvements quickly.',
-    image: 'https://via.placeholder.com/150',
+    image: placeholderImage,
   },
 ];
 
@@ -63,16 +67,16 @@ const DoctorRecommendations = () => {
                 value={doctor.rating} // The rating value
                 size={24} // Size of the stars
                 edit={false} // Prevent users from editing
-                activeColor="black" // Gold color for the stars
+                activeColor="black" // Color for the stars
               />
             </div>
             <p className="doctor-review">
               <em>{doctor.review}</em>
             </p>
             <div className="doctor-actions">
-              <button className="schedule-btn">Schedule Appointment</button>
-              <button className="chat-btn">Chat with Doctor</button>
-            </div>
+        <Button icon={faCalendarAlt} text="Schedule Appointment" color="#007bff" />
+        <Button icon={faComments} text="Chat with Doctor" color="#28a745" />
+      </div>
           </div>
         </div>
         <button className="carousel-button right" onClick={handleNext}>
