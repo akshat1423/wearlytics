@@ -5,16 +5,16 @@ const HealthAssistant = () => (
     <div 
         className="card" 
         style={{ 
-            padding: '20px', 
+            padding: '15px', 
             maxWidth: '400px', 
-            margin: '0 auto', 
+            margin: '0 auto 20px auto', 
             border: '1px solid #ddd', 
             borderRadius: '8px', 
             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' 
         }}
     >
         {/* Title */}
-        <h2 style={{ textAlign: 'center', marginBottom: '20px' }}>
+        <h2 style={{ textAlign: 'center', marginBottom: '15px' }}>
             Health Assistant <FaQuestionCircle />
         </h2>
 
@@ -24,8 +24,8 @@ const HealthAssistant = () => (
             placeholder="Ask a question" 
             style={{ 
                 width: '100%', 
-                padding: '12px', 
-                marginBottom: '20px', 
+                padding: '10px', 
+                marginBottom: '15px', 
                 borderRadius: '6px', 
                 border: '1px solid #ddd', 
                 boxShadow: 'inset 0 2px 4px rgba(0, 0, 0, 0.05)' 
@@ -36,8 +36,8 @@ const HealthAssistant = () => (
         <button 
             style={{ 
                 width: '100%', 
-                padding: '12px', 
-                marginBottom: '20px', 
+                padding: '10px', 
+                marginBottom: '15px', 
                 backgroundColor: '#28a745', 
                 color: '#fff', 
                 border: 'none', 
@@ -51,7 +51,7 @@ const HealthAssistant = () => (
         </button>
         
         {/* Suggested questions */}
-        <div style={{ marginBottom: '20px' }}>
+        <div style={{ marginBottom: '15px' }}>
             <h4 style={{ marginBottom: '10px' }}>Suggested Questions</h4>
             <ul style={{ listStyleType: 'none', paddingLeft: '0' }}>
                 <li style={{ padding: '10px', borderBottom: '1px solid #ddd' }}>
@@ -70,12 +70,12 @@ const HealthAssistant = () => (
         </div>
 
         {/* File upload and attach buttons */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '20px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
             <button 
                 style={{ 
                     flex: 1, 
                     marginRight: '10px', 
-                    padding: '12px', 
+                    padding: '10px', 
                     backgroundColor: '#28a745', 
                     color: '#fff', 
                     border: 'none', 
@@ -90,7 +90,7 @@ const HealthAssistant = () => (
             <button 
                 style={{ 
                     flex: 1, 
-                    padding: '12px', 
+                    padding: '10px', 
                     backgroundColor: '#28a745', 
                     color: '#fff', 
                     border: 'none', 
@@ -110,7 +110,7 @@ const HealthAssistant = () => (
                 style={{ 
                     flex: 1, 
                     marginRight: '10px', 
-                    padding: '12px', 
+                    padding: '10px', 
                     backgroundColor: '#28a745', 
                     color: '#fff', 
                     border: 'none', 
@@ -125,7 +125,7 @@ const HealthAssistant = () => (
             <button 
                 style={{ 
                     flex: 1, 
-                    padding: '12px', 
+                    padding: '10px', 
                     backgroundColor: '#28a745', 
                     color: '#fff', 
                     border: 'none', 

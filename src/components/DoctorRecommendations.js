@@ -73,15 +73,17 @@ const DoctorRecommendations = () => {
             <p className="doctor-review">
               <em>{doctor.review}</em>
             </p>
-            <div className="doctor-actions">
-        <Button icon={faCalendarAlt} text="Schedule Appointment" color="#007bff" />
-        <Button icon={faComments} text="Chat with Doctor" color="#28a745" />
-      </div>
+           
           </div>
+          
         </div>
         <button className="carousel-button right" onClick={handleNext}>
           &#10095;
         </button>
+      </div>
+      <div className="doctor-actions">
+        <Button icon={faCalendarAlt} text="Schedule Appointment" color="#007bff" />
+        <Button icon={faComments} text="Chat with Doctor" color="#28a745" />
       </div>
     </div>
   );

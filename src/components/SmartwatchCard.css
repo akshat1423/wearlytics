@@ -1,0 +1,42 @@
+.smartwatch-connected-card {
+    display: flex;
+    align-items: center;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Set a max width to keep the card compact */
+    height: 120px; /* Set a compact height */
+    margin-bottom: 20px;
+  }
+  
+  .smartwatch-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .smartwatch-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .smartwatch-info h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #4CAF50;
+  }
+  
+  .smartwatch-info p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  .disclaimer{
+    color: #5555556b !important;
+  }
+  

@@ -9,11 +9,13 @@ import DoctorRecommendations from './components/DoctorRecommendations';
 import HealthReports from './components/HealthReports';
 import HealthReportDetails from './components/HealthReportDetails';
 import BlogSection from './components/BlogSection';
+import SmartwatchConnectedCard from './components/SmartwatchCard';
 
 function App() {
   return (
     <div className="container">
       <Header />
+      <SmartwatchConnectedCard/>
       <HealthSummary />
       <AIAlerts />
       <DiseasePredictor />
