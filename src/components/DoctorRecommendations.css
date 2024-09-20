@@ -1,0 +1,82 @@
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .doctor-recommendation h2 {
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+  }
+  
+  .carousel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .doctor-info {
+    display: flex;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+    width: 80%;
+  }
+  
+  .doctor-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+  }
+  
+  .doctor-details h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .doctor-details p {
+    margin: 5px 0;
+  }
+  
+  .doctor-rating {
+    margin: 10px 0;
+  }
+  
+  .doctor-review {
+    font-style: italic;
+  }
+  
+  .doctor-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .schedule-btn, .chat-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .schedule-btn:hover, .chat-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #4CAF50;
+    padding: 10px;
+  }
+  
+  .carousel-button:hover {
+    color: #388e3c;
+  }
+  
