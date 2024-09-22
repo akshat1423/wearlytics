@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './ChatApp.css'; // Import CSS for styling
-import { FaRobot, FaUser } from 'react-icons/fa'; // Import both icons
+import { FaRobot, FaUser } from 'react-icons/fa';
 
-const ChatApp = () => {
-    const [query, setQuery] = useState('');
+const ChatApp = ({ query, setQuery, onSend }) => {
     const [messages, setMessages] = useState([]);
     const userId = 'AkshatJain'; // Replace with dynamic user ID if needed
 
@@ -12,7 +11,10 @@ const ChatApp = () => {
 
         // Add user message to the chat
         setMessages([...messages, { user: true, text: query }]);
-        setQuery('');
+        setQuery(''); // Clear the query input after sending
+
+        // Trigger fetching suggestions
+        onSend();
 
         try {
             const response = await fetch('https://wearlytics.pythonanywhere.com/api/chat/', {
@@ -55,30 +57,27 @@ const ChatApp = () => {
             <div className="chat-window">
                 {messages.map((msg, index) => (
                     <div key={index} className={`message-container ${msg.user ? 'user' : 'assistant'}`}>
-                    {!msg.user && (
-                        <div className="icon-container">
-                            <FaRobot />
+                        {!msg.user && (
+                            <div className="icon-container">
+                                <FaRobot />
+                            </div>
+                        )}
+                        <div className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}>
+                            {msg.text}
                         </div>
-                    )}
-                    <div className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}>
-                        {msg.text}
+                        {msg.user && (
+                            <div className="icon-container user-icon">
+                                <FaUser />
+                            </div>
+                        )}
                     </div>
-                    {msg.user && (
-                        <div className="icon-container user-icon">
-                            <FaUser />
-                        </div>
-                    )}
-                </div>
-                
-
-               
                 ))}
             </div>
             <div className="input-container">
                 <input
                     type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
+                    value={query} // Use the prop from parent
+                    onChange={(e) => setQuery(e.target.value)} // Update parent state
                     onKeyDown={handleKeyDown}
                     placeholder="Ask a question..."
                 />
