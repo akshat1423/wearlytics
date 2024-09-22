@@ -110,7 +110,7 @@ const HealthAssistant = () => (
             <button 
                 style={{ 
                     flex: 1, 
-                    marginRight: '10px', 
+                    // marginRight: '10px', 
                     padding: '10px', 
                     backgroundColor: '#28a745', 
                     color: '#fff', 
@@ -123,7 +123,7 @@ const HealthAssistant = () => (
             >
                 <FaUserMd style={{ marginRight: '8px' }} /> Connect with Live Doctor
             </button>
-            <button 
+            {/* <button 
                 style={{ 
                     flex: 1, 
                     padding: '10px', 
@@ -137,7 +137,7 @@ const HealthAssistant = () => (
                 }}
             >
                 <FaRobot style={{ marginRight: '8px' }} /> Chat with AI
-            </button>
+            </button> */}
         </div>
     </div>
 );
