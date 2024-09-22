@@ -18,6 +18,7 @@ function App() {
       <Header />
       <SmartwatchConnectedCard/>
       <HealthSummary />
+      <ChatApp />
       <AIAlerts />
       <DiseasePredictor />
       <HealthAssistant />
@@ -26,7 +27,6 @@ function App() {
       <HealthReports />
       <HealthReportDetails />
       <BlogSection />
-      <ChatApp />
     </div>
   );
 }

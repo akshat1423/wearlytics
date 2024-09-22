@@ -43,11 +43,21 @@ const ChatApp = () => {
         }
     };
 
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            handleSend();
+        }
+    };
+
     return (
         <div className="chat-container">
+            <h2 className="doctor-recommendation">AI Health Assistant</h2>
             <div className="chat-window">
                 {messages.map((msg, index) => (
-                    <div key={index} className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}>
+                    <div
+                        key={index}
+                        className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}
+                    >
                         {msg.text}
                     </div>
                 ))}
@@ -57,9 +67,10 @@ const ChatApp = () => {
                     type="text"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
+                    onKeyDown={handleKeyDown}
                     placeholder="Ask a question..."
                 />
-                <button onClick={handleSend}>Send</button>
+                <button className="chat-btn" onClick={handleSend}>Send</button>
             </div>
         </div>
     );
