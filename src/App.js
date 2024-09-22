@@ -18,10 +18,11 @@ function App() {
       <Header />
       <SmartwatchConnectedCard/>
       <HealthSummary />
+      <HealthAssistant />
       {/* <ChatApp /> */}
       <AIAlerts />
       <DiseasePredictor />
-      <HealthAssistant />
+     
       <Insights />
       <DoctorRecommendations />
       <HealthReports />

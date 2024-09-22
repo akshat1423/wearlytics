@@ -1,7 +1,6 @@
-// src/ChatApp.js
 import React, { useState } from 'react';
 import './ChatApp.css'; // Import CSS for styling
-import {FaRobot } from 'react-icons/fa';
+import { FaRobot, FaUser } from 'react-icons/fa'; // Import both icons
 
 const ChatApp = () => {
     const [query, setQuery] = useState('');
@@ -55,12 +54,24 @@ const ChatApp = () => {
             <h2 className="chat-recommendation"><FaRobot style={{ marginRight: '8px' }} /> AI Assistant</h2>
             <div className="chat-window">
                 {messages.map((msg, index) => (
-                    <div
-                        key={index}
-                        className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}
-                    >
+                    <div key={index} className={`message-container ${msg.user ? 'user' : 'assistant'}`}>
+                    {!msg.user && (
+                        <div className="icon-container">
+                            <FaRobot />
+                        </div>
+                    )}
+                    <div className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}>
                         {msg.text}
                     </div>
+                    {msg.user && (
+                        <div className="icon-container user-icon">
+                            <FaUser />
+                        </div>
+                    )}
+                </div>
+                
+
+               
                 ))}
             </div>
             <div className="input-container">
