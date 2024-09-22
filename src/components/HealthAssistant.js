@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuestionCircle, FaFileUpload, FaPaperclip, FaUserMd, FaRobot } from 'react-icons/fa';
-import ChatApp from './components/ChatApp';
+import ChatApp from './ChatApp';
 const HealthAssistant = () => (
     <div 
         className="card" 
