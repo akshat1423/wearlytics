@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuestionCircle, FaFileUpload, FaPaperclip, FaUserMd, FaRobot } from 'react-icons/fa';
-import ChatApp from './ChatApp';
+import ChatApp from './components/ChatApp';
 const HealthAssistant = () => (
     <div 
         className="card" 
@@ -34,7 +34,7 @@ const HealthAssistant = () => (
         />
         
         {/* Ask button */}
-        <button 
+        {/* <button 
             style={{ 
                 width: '100%', 
                 padding: '10px', 

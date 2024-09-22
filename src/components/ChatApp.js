@@ -52,7 +52,7 @@ const ChatApp = () => {
 
     return (
         <div className="chat-container">
-            <h2 className="doctor-recommendation"><FaRobot style={{ marginRight: '8px' }} /> AI Assistant</h2>
+            <h2 className="chat-recommendation"><FaRobot style={{ marginRight: '8px' }} /> AI Assistant</h2>
             <div className="chat-window">
                 {messages.map((msg, index) => (
                     <div
