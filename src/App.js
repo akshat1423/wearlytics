@@ -10,6 +10,7 @@ import HealthReports from './components/HealthReports';
 import HealthReportDetails from './components/HealthReportDetails';
 import BlogSection from './components/BlogSection';
 import SmartwatchConnectedCard from './components/SmartwatchCard';
+import ChatApp from './components/ChatApp';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
       <HealthReports />
       <HealthReportDetails />
       <BlogSection />
+      <ChatApp />
     </div>
   );
 }
