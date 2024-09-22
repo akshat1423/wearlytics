@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FaQuestionCircle, FaPlusSquare } from 'react-icons/fa';
+import { FaQuestionCircle, FaPlusSquare, FaFileUpload, FaPaperclip, FaUserMd } from 'react-icons/fa'; // Import necessary icons
 import ChatApp from './ChatApp';
 import spinner from './assets/3d.gif';  // Path to your spinner image
 
@@ -116,6 +116,59 @@ const HealthAssistant = () => {
                         ))}
                     </ul>
                 )}
+            </div>
+
+            {/* File upload and attach buttons */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '15px' }}>
+                <button 
+                    style={{ 
+                        flex: 1, 
+                        marginRight: '10px', 
+                        padding: '10px', 
+                        backgroundColor: '#28a745', 
+                        color: '#fff', 
+                        border: 'none', 
+                        borderRadius: '6px', 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        alignItems: 'center' 
+                    }}
+                >
+                    <FaFileUpload style={{ marginRight: '8px' }} /> Choose file
+                </button>
+                <button 
+                    style={{ 
+                        flex: 1, 
+                        padding: '10px', 
+                        backgroundColor: '#28a745', 
+                        color: '#fff', 
+                        border: 'none', 
+                        borderRadius: '6px', 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        alignItems: 'center' 
+                    }}
+                >
+                    <FaPaperclip style={{ marginRight: '8px' }} /> Attach
+                </button>
+            </div>
+
+            {/* Connect with live doctor button */}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+                <button 
+                    style={{ 
+                        padding: '10px', 
+                        backgroundColor: '#28a745', 
+                        color: '#fff', 
+                        border: 'none', 
+                        borderRadius: '6px', 
+                        display: 'flex', 
+                        justifyContent: 'center', 
+                        alignItems: 'center' 
+                    }}
+                >
+                    <FaUserMd style={{ marginRight: '8px' }} /> Connect with Live Doctor
+                </button>
             </div>
         </div>
     );
