@@ -1,6 +1,7 @@
 // src/ChatApp.js
 import React, { useState } from 'react';
 import './ChatApp.css'; // Import CSS for styling
+import {FaRobot } from 'react-icons/fa';
 
 const ChatApp = () => {
     const [query, setQuery] = useState('');
@@ -51,7 +52,7 @@ const ChatApp = () => {
 
     return (
         <div className="chat-container">
-            <h2 className="doctor-recommendation">AI Health Assistant</h2>
+            <h2 className="doctor-recommendation"><FaRobot style={{ marginRight: '8px' }} /> AI Assistant</h2>
             <div className="chat-window">
                 {messages.map((msg, index) => (
                     <div

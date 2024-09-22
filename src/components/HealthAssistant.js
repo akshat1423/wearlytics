@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaQuestionCircle, FaFileUpload, FaPaperclip, FaUserMd, FaRobot } from 'react-icons/fa';
-
+import ChatApp from './ChatApp';
 const HealthAssistant = () => (
     <div 
         className="card" 
@@ -17,9 +17,10 @@ const HealthAssistant = () => (
         <h2 style={{ textAlign: 'center', marginBottom: '15px' }}>
             Health Assistant <FaQuestionCircle />
         </h2>
+        <ChatApp></ChatApp>
 
         {/* Input field for asking a question */}
-        <input 
+        {/* <input 
             type="text" 
             placeholder="Ask a question" 
             style={{ 
@@ -49,7 +50,7 @@ const HealthAssistant = () => (
         >
             <FaQuestionCircle style={{ marginRight: '8px' }} /> Ask
         </button>
-        
+         */}
         {/* Suggested questions */}
         <div style={{ marginBottom: '15px' }}>
             <h4 style={{ marginBottom: '10px' }}>Suggested Questions</h4>
