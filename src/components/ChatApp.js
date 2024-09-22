@@ -1,6 +1,5 @@
 // src/ChatApp.js
 import React, { useState } from 'react';
-import axios from 'axios';
 import './ChatApp.css'; // Import CSS for styling
 
 const ChatApp = () => {
@@ -16,12 +15,23 @@ const ChatApp = () => {
         setQuery('');
 
         try {
-            const response = await axios.post('https://wearlytics.pythonanywhere.com/api/chat/', {
-                user_id: userId,
-                query: query,
+            const response = await fetch('https://wearlytics.pythonanywhere.com/api/chat/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    user_id: userId,
+                    query: query,
+                }),
             });
 
-            const assistantResponse = response.data.response;
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
+            const data = await response.json();
+            const assistantResponse = data.response;
 
             // Add assistant message to the chat
             setMessages((prevMessages) => [
