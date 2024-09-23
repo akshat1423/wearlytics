@@ -34,7 +34,7 @@ const ChatApp = ({ query, setQuery }) => {
     const sendMessageToAPI = async (message) => {
         const token = localStorage.getItem('access_token');
         try {
-            const response = await fetch('http://localhost:8000/api/chat/', {
+            const response = await fetch('https://wearlytics.pythonanywhere.com/api/chat/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const ChatApp = ({ query, setQuery }) => {
             formData.append('audio', blob, 'recording.webm');
 
             try {
-                const response = await fetch('http://localhost:8000/api/upload-audio/', {
+                const response = await fetch('https://wearlytics.pythonanywhere.com/api/upload-audio/', {
                     method: 'POST',
                     headers: {
                         'Authorization': `Bearer ${token}`,

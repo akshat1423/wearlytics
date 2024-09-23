@@ -14,7 +14,7 @@ const HealthAssistant = () => {
     const fetchSuggestions = async () => {
         setLoading(true); // Start loading
         try {
-            const response = await fetch('http://localhost:8000/api/suggestions/', {
+            const response = await fetch('https://wearlytics.pythonanywhere.com/api/suggestions/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
