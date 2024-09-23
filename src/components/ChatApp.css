@@ -48,7 +48,6 @@
     padding: 10px;
     border-radius: 10px;
     margin: 5px 0;
-    max-width: fit-content; /* Adjust width based on message content */
     position: relative;
     word-wrap: break-word;
     max-width: 80%; /* Limit the width of the message */
@@ -71,16 +70,37 @@
 
 /* Icon container for assistant */
 .icon-container {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e2e2e2; /* Background for assistant's icon */
-    font-size: 18px;
-    margin-right: 10px;
+    width: 40px; /* Adjust to desired size */
+    height: 40px; /* Ensure it's the same as width for a perfect circle */
+    background-color: #f0f0f0; /* Background color */
+    border-radius: 50%; /* Circular shape */
+    margin: 5px; /* Adjust margin if needed */
 }
+
+.user-icon {
+    background-color: #d1e7dd; /* Optional: Different color for user icon */
+}
+
+.transcription-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Same as width for a perfect circle */
+    background-color: #d1e7dd; /* Optional: Different color for clarity */
+    border-radius: 50%; /* Ensures the icon is circular */
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* If you want to apply this to the existing icon */
+.icon-container {
+    /* Other styles */
+    border-radius: 50%; /* Make sure this is set */
+}
+
 
 /* Icon container for user */
 .icon-container.user-icon {
@@ -94,6 +114,7 @@
     display: flex;
     padding: 10px;
     border-top: 1px solid #ccc;
+    align-items: center; /* Center items vertically */
 }
 
 /* Styling for input field */
@@ -102,22 +123,77 @@ input {
     flex: 1;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 20px; /* Rounded corners for the input */
 }
 
 /* Styling for send button */
 .chat-btn {
-    height: 40px;
-    margin-top: 0;
-    margin-left: 10px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #4CAF50;
+    background-color: #25D366; /* WhatsApp color */
     color: white;
-    border-radius: 5px;
+    border: none;
+    border-radius: 50%; /* Make the button circular */
+    width: 40px; /* Adjust size as needed */
+    height: 40px; /* Adjust size as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
+    margin-left: 8px; /* Space between input and button */
 }
 
 .chat-btn:hover {
-    background-color: #45a049;
+    background-color: #1EBE53; /* Darker shade on hover */
+}
+
+.chat-btn:focus {
+    outline: none; /* Remove focus outline */
+}
+
+/* Microphone icon styling */
+.mic-icon {
+    cursor: pointer;
+    font-size: 19px;
+    padding: 10px;
+    border-radius: 50%; /* Add border-radius to make it circular */
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    margin-right: 5px;
+}
+
+.mic-icon.recording {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+
+.audio-message {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #e2f0d9; /* Light green background for audio messages */
+    margin: 10px 0;
+    max-width: fit-content; /* Adjust width based on content */
+    display: flex;
+    align-items: center;
+}
+
+/* Add additional styles for the message container */
+.message-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 10px 0;
+}
+
+.stop-icon {
+    width: 30px; /* Adjust size as needed */
+    height: 30px; /* Adjust size as needed */
+    background-color: #4CAF50; /* Color for the stop button */
+    border-radius: 5px; /* Optional: round the corners slightly */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.disclaimer {
+    font-size: 0.8em;
+    color: #888; /* Light gray color */
 }

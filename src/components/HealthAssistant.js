@@ -4,21 +4,23 @@ import ChatApp from './ChatApp';
 import spinner from './assets/3d.gif';  // Path to your spinner image
 
 const HealthAssistant = () => {
-    const [query, setQuery] = useState('');
-    const [suggestedQuestions, setSuggestedQuestions] = useState([]);
-    const [loading, setLoading] = useState(false); // Add loading state
-    const userId = 'AkshatJain'; // Replace with dynamic user ID if needed
+    const [query, setQuery] = useState(''); // Query to send to ChatApp
+    const [suggestedQuestions, setSuggestedQuestions] = useState([]); // List of suggested questions
+    const [loading, setLoading] = useState(false); // Loading spinner state
+
+    const token = localStorage.getItem('access_token'); // Retrieve token from localStorage
 
     // Function to fetch suggested questions
     const fetchSuggestions = async () => {
         setLoading(true); // Start loading
         try {
-            const response = await fetch('https://wearlytics.pythonanywhere.com/api/suggestions/', {
+            const response = await fetch('http://localhost:8000/api/suggestions/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`, // Add the Authorization header with JWT token
                 },
-                body: JSON.stringify({ user_id: userId }),
+                body: JSON.stringify({}),
             });
 
             if (!response.ok) {
@@ -26,12 +28,9 @@ const HealthAssistant = () => {
             }
 
             const data = await response.json();
-            setSuggestedQuestions([
-                data['question 1'],
-                data['question 2'],
-                data['question 3'],
-                data['question 4'],
-            ]);
+
+            // Adjust to match the structure of the response: questions array
+            setSuggestedQuestions(data.questions);
         } catch (error) {
             console.error('Error fetching suggestions:', error);
         } finally {
@@ -46,7 +45,7 @@ const HealthAssistant = () => {
 
     // Function to handle adding suggested question to input field
     const addSuggestedQuestion = (suggestion) => {
-        setQuery(suggestion);
+        setQuery(suggestion); // Update query with the selected suggested question
     };
 
     return (
@@ -68,8 +67,8 @@ const HealthAssistant = () => {
             
             {/* Pass down query state and fetchSuggestions as props to ChatApp */}
             <ChatApp 
-                query={query} 
-                setQuery={setQuery} 
+                query={query}  // Pass the updated query to ChatApp
+                setQuery={setQuery}  // Allow ChatApp to update the query as well
                 onSend={() => fetchSuggestions()} // Trigger suggestions when sending chat
             />
 
@@ -103,7 +102,7 @@ const HealthAssistant = () => {
                                         color: '#fff', 
                                         border: 'none', 
                                         borderRadius: '4px', 
-                                        width: '40px', // Set constant width
+                                        width: '40px', 
                                         display: 'flex', 
                                         justifyContent: 'center', 
                                         alignItems: 'center'

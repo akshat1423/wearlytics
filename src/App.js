@@ -1,34 +1,25 @@
-import React from 'react';
-import Header from './components/Header';
-import HealthSummary from './components/HealthSummary';
-import AIAlerts from './components/AIAlerts';
-import DiseasePredictor from './components/DiseasePredictor';
-import HealthAssistant from './components/HealthAssistant';
-import Insights from './components/Insights';
-import DoctorRecommendations from './components/DoctorRecommendations';
-import HealthReports from './components/HealthReports';
-import HealthReportDetails from './components/HealthReportDetails';
-import BlogSection from './components/BlogSection';
-import SmartwatchConnectedCard from './components/SmartwatchCard';
-import ChatApp from './components/ChatApp';
+import React, { useState } from 'react';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import TokenLogin from './components/TokenLogic';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+  const [userId, setUserId] = useState(null);
+
   return (
-    <div className="container">
-      <Header />
-      <SmartwatchConnectedCard/>
-      <HealthSummary />
-      <HealthAssistant />
-      {/* <ChatApp /> */}
-      <AIAlerts />
-      <DiseasePredictor />
-     
-      <Insights />
-      <DoctorRecommendations />
-      <HealthReports />
-      <HealthReportDetails />
-      <BlogSection />
-    </div>
+    <Router>
+      <div className="container">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/token-login" element={<TokenLogin />} />
+          {/* Pass setUserId as a prop to the Login component */}
+          <Route path="/login" element={<Login setUserId={setUserId} />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
