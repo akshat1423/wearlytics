@@ -10,7 +10,7 @@ const Header = ({ name }) => (
         <h2>
             <FontAwesomeIcon icon={faUser} /> Welcome to Wearlytics, {name}
         </h2>
-        {name === "Guest" ? (
+        {name !== "Guest" ? (
             <button className="header-button">
                 <FontAwesomeIcon icon={faUser} /> Profile
             </button>
