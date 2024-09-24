@@ -25,7 +25,7 @@ const Login = ({ setUserId }) => {
             // Store the access and refresh tokens in localStorage or cookies
             localStorage.setItem('access_token', data.access);
             localStorage.setItem('refresh_token', data.refresh);
-            localStorage.setItem('user_name', data.user_name);
+            localStorage.setItem('name', data.user_name);
     
             setUserId(data.user_id);  // Set the user ID in your state
             navigate('/');  // Redirect to dashboard or home page
