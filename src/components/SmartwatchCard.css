@@ -39,21 +39,8 @@
   .disclaimer{
     color: #5555556b !important;
   }
-  
-  /* SmartwatchCard.css */
-
-.smartwatch-connected-card {
-  border: 1px solid #ccc; /* Optional: Add border to the card */
-  padding: 16px; /* Optional: Add padding */
-  border-radius: 8px; /* Optional: Rounded corners */
-  text-align: center; /* Center the text */
-}
-
-.smartwatch-image {
-  width: 100px; /* Adjust size as needed */
-}
 
 .disconnected {
-  color: red; /* Set the text color to red */
+  color: red !important; /* Set the text color to red */
   font-weight: bold; /* Make the text bold */
 }

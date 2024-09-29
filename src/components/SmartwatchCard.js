@@ -21,7 +21,7 @@ const SmartwatchConnectedCard = ({ name }) => {
           <>
             <h3 className="disconnected">Disconnected</h3> {/* Apply the disconnected class */}
             <p>Please connect your smartwatch to sync data.</p>
-            <p>Health AI Inactive</p>
+            {/* <p>Health AI Inactive</p> */}
           </>
         )}
         <p className='disclaimer'>*This website is optimized for </p>
