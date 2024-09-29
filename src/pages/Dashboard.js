@@ -20,7 +20,7 @@ function Dashboard() {
       {/* Pass the name to the Header component */}
       <Header name={name} />
       <SmartwatchConnectedCard name={name} /> {/* Pass name to the card */}
-      <HealthSummary />
+      <HealthSummary name={name} /> {/* Pass name to HealthSummary */}
       <HealthAssistant />
       <AIAlerts />
       <DiseasePredictor />

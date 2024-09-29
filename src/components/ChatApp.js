@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ChatApp.css';
 import { FaRobot, FaUser, FaMicrophone, FaPaperPlane, FaRecordVinyl } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const ChatApp = ({ query, setQuery }) => {
     const [messages, setMessages] = useState([]);
@@ -11,6 +12,7 @@ const ChatApp = ({ query, setQuery }) => {
     const token = localStorage.getItem('access_token');
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
+    const [hasPromptedLogin, setHasPromptedLogin] = useState(false); // State to track login prompt
 
     useEffect(() => {
         return () => {
@@ -123,6 +125,20 @@ const ChatApp = ({ query, setQuery }) => {
         }
     };
 
+    // Check if user is logged in
+    const isLoggedIn = !!token;
+
+    // Add a login prompt message if the user is not logged in and hasn't been prompted yet
+    useEffect(() => {
+        if (!isLoggedIn && !hasPromptedLogin) {
+            setMessages((prevMessages) => [
+                ...prevMessages,
+                { user: false, text: 'Please <Link to="/login">login</Link> to access this feature.' }
+            ]);
+            setHasPromptedLogin(true); // Mark as prompted
+        }
+    }, [isLoggedIn, hasPromptedLogin]);
+
     return (
         <div className="chat-container">
             <h2 className="chat-recommendation"><FaRobot style={{ marginRight: '8px' }} /> AI Assistant</h2>
@@ -137,7 +153,11 @@ const ChatApp = ({ query, setQuery }) => {
                             </div>
                         ) : (
                             <div className={`message ${msg.user ? 'user-message' : 'assistant-message'}`}>
-                                {msg.text}
+                                {msg.text.includes('<Link') ? (
+                                    <span dangerouslySetInnerHTML={{ __html: msg.text.replace(/<Link/g, '<a') }} />
+                                ) : (
+                                    msg.text
+                                )}
                             </div>
                         )}
                         {msg.user && <div className="icon-container user-icon"><FaUser /></div>}
